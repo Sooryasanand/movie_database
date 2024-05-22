@@ -2,7 +2,7 @@ import Header from "./components/Header/Header";
 
 function App() {
   return (
-    <div class="bg-[#3b4747] h-screen">
+    <div className="bg-primary h-screen">
       <Header />
     </div>
   );
