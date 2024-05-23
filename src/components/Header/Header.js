@@ -1,20 +1,22 @@
 import { PiFilmSlateFill } from "react-icons/pi";
 import SideBar from "../SideBar/Sidebar";
 import { useState } from "react";
+import DropDown from "../DropDown/DropDown";
+import { CgProfile } from "react-icons/cg";
 
 function Header() {
   let [open, isOpen] = useState(false);
 
   return (
     <div>
-      <div className="sm:p-3 p-4 flex flex-row bg-secondary items-center justify-center sm:h-1/10 w-full h-20">
+      <div className="sm:p-3 p-4 flex flex-row bg-gradient-to-r from-[#1c2021] to-[#171b1c] items-center justify-center sm:h-1/10 w-full h-20">
         <svg
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="w-7 md:hidden items-center justify-center mx-auto mr-5"
           onClick={() => {
-            if (open == false) {
+            if (open === false) {
               isOpen(true);
             } else {
               isOpen(false);
@@ -51,10 +53,10 @@ function Header() {
         </svg>
         <div className="flex flex-row grow">
           <PiFilmSlateFill className="content-center sm:mt-2 sm:mr-10 sm:ml-[15px] md:block hidden text-white text-3xl" />
-          <h1 className="font-sans font-bold text-xl text-white text-transform:uppercase sm:text-2xl content-center w-auto">
+          <h1 className="font-poetsen font-bold text-xl text-white text-transform:uppercase sm:text-2xl content-center w-auto">
             Movie Tracker
           </h1>
-          <form className="ml-10 w-1/4 md:flex flex-row items-center rounded bg-[#303435] invisible md:visible">
+          <div className="ml-10 w-1/4 md:flex flex-row items-center rounded bg-menu invisible md:visible">
             <svg
               className="w-4 h-4 text-gray-500 dark:text-gray-400 ml-3"
               aria-hidden="true"
@@ -73,49 +75,21 @@ function Header() {
             <input
               type="search"
               id="default-search"
-              className="form-input w-full h-10 bg-[#303435] border-none text-white"
+              className="form-input w-full h-10 bg-menu border-none text-white rounded"
               placeholder="Search"
               required
             />
-          </form>
+          </div>
         </div>
-        <div className="flex flex-row hover:cursor-pointer">
-          <svg
-            width="30px"
-            height="30px"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            stroke="#ffffff"
-          >
-            <g id="SVGRepo_bgCarrier" stroke-width="0" />
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <g id="SVGRepo_iconCarrier">
-              <circle
-                cx="12"
-                cy="7"
-                r="4"
-                stroke="#ffffff"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M4 21V17C4 15.8954 4.89543 15 6 15H18C19.1046 15 20 15.8954 20 17V21"
-                stroke="#ffffff"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </g>
-          </svg>
-        </div>
+        <DropDown
+          icon={<CgProfile className="text-white" size={28} />}
+          data={[
+            { name: "Account Setting", href: "#" },
+            { name: "Sign Out", href: "#" },
+          ]}
+        />
       </div>
-      <div className={`md:block ${open ? "block" : "hidden"} `}>
+      <div className={`md:block ${open ? "block" : "hidden"}`}>
         <SideBar />
       </div>
     </div>

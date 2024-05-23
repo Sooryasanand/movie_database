@@ -4,9 +4,13 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        poetsen: ['Poetsen One', 'sans-serif']
+      },
       colors: {
-        primary: "#3b4747",
-        secondary: "#1f2324",
+        primary: "black",
+        secondary: "#1a1e1f",
+        menu: "#3b4142"
       },
     },
   },

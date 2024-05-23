@@ -9,6 +9,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#404c4c, #473728);
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 code {
@@ -18,7 +21,7 @@ code {
 
 @layer components {
   .sidebar-icon {
-    @apply relative flex items-center justify-center h-12 w-12 mx-auto bg-primary m-5 hover:rounded-xl rounded-3xl transition-all duration-300 ease-linear cursor-pointer;
+    @apply relative flex items-center justify-center h-12 w-12 mx-auto bg-menu m-5 hover:rounded-xl rounded-3xl transition-all duration-300 ease-linear cursor-pointer;
   }
 
   .sidebar-tooltip {
