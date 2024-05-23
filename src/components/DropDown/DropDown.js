@@ -3,10 +3,6 @@ import { Menu, Transition, MenuButton } from "@headlessui/react";
 
 import PropTypes from "prop-types";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 function MenuTemplate({ name, link }) {
   return (
     <Menu>

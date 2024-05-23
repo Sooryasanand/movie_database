@@ -6,7 +6,7 @@ import { FaFilter } from "react-icons/fa";
 
 function App() {
   return (
-    <div className="h-full">
+    <div className="h-full w-full">
       <Header />
       <div className="md:block hidden">
         <TopRow selected={"RECOMMENDED"} />
@@ -22,7 +22,7 @@ function App() {
         />
       </div>
 
-      <MovieCarousel />
+      <MovieCarousel url="https://api.themoviedb.org/3/movie/popular" />
     </div>
   );
 }
